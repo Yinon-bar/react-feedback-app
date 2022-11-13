@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { FaTimes } from "react-icons/fa";
 
 function FeedbackItem({ data }) {
   const [rating, setRating] = useState(8);
@@ -13,8 +14,10 @@ function FeedbackItem({ data }) {
   return (
     <div className="card">
       <div className="num-display">{data.rating}</div>
+      <button onClick={handleClick} className="close">
+        <FaTimes color="purple" />
+      </button>
       <div className="text-display">{data.text}</div>
-      <button onClick={handleClick}>Send</button>
     </div>
   );
 }
