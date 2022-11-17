@@ -1,9 +1,5 @@
-import { useState } from "react";
-<<<<<<< HEAD
+// import { useState } from "react";
 import Card from "./Shared/Card";
-=======
-import { FaTimes } from "react-icons/fa";
->>>>>>> 3b2ba6f1b6824bfb4d0a665bcb84b8d71ba635f5
 
 function FeedbackItem({ data }) {
   // const [rating, setRating] = useState(8);
@@ -16,19 +12,19 @@ function FeedbackItem({ data }) {
   // };
 
   return (
-    <Card reverse={false} className="card">
+    <Card className="card">
       <div className="num-display">{data.rating}</div>
-      <button onClick={handleClick} className="close">
+      {/* <button onClick={handleClick} className="close">
         <FaTimes color="purple" />
-      </button>
+      </button> */}
       <div className="text-display">{data.text}</div>
-<<<<<<< HEAD
       {/* <button onClick={handleClick}>Send</button> */}
     </Card>
-=======
-    </div>
->>>>>>> 3b2ba6f1b6824bfb4d0a665bcb84b8d71ba635f5
   );
 }
+
+Card.defaultProps = {
+  reverse: false,
+};
 
 export default FeedbackItem;
