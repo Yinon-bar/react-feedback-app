@@ -3,6 +3,7 @@ import "./App.css";
 import FeedbackList from "./Components/FeedbackList";
 
 import Header from "./Components/Header";
+import Card from "./Components/Shared/Card";
 import FeedbackData from "./data/FeedbackData";
 
 function App() {
