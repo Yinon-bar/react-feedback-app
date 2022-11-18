@@ -1,6 +1,6 @@
 import FeedbackItem from "./FeedbackItem";
 
-function FeedbackList({ feedback }) {
+function FeedbackList({ feedback, handleDelete }) {
   console.log(feedback);
 
   if (!feedback || feedback.length === 0) {
@@ -10,7 +10,11 @@ function FeedbackList({ feedback }) {
   return (
     <div className="feedback-list">
       {feedback.map((feedObj) => (
-        <FeedbackItem key={feedObj.id} data={feedObj} />
+        <FeedbackItem
+          key={feedObj.id}
+          data={feedObj}
+          handleDelete={handleDelete}
+        />
       ))}
     </div>
   );
