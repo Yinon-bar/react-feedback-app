@@ -1,9 +1,14 @@
 import "./App.css";
 
 import Routing from "./Components/Routing/Routing";
+import FeedbackContext from "./Context/FeedbackContext";
 
 function App() {
-  return <Routing />;
+  return (
+    <FeedbackContext.Provider>
+      <Routing />
+    </FeedbackContext.Provider>
+  );
 }
 
 export default App;
