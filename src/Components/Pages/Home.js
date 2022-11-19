@@ -1,4 +1,3 @@
-import React from "react";
 import FeedbackForm from "../../Components/FeedbackForm";
 import FeedbackList from "../../Components/FeedbackList";
 import FeedbackStats from "../../Components/FeedbackStats";
@@ -8,6 +7,7 @@ import { useState } from "react";
 import { v4 as uuidv4 } from "uuid";
 import "../../index.css";
 import AboutIconLink from "../AboutIconLink";
+import FeedbackContext from "../../Context/FeedbackContext";
 
 function Home() {
   const [feedback, setFeedback] = useState(FeedbackData);
@@ -23,15 +23,17 @@ function Home() {
   };
 
   return (
-    <div className="App">
-      <Header text="" />
-      <div className="container">
-        <FeedbackForm handleAdd={addFeedback} />
-        <FeedbackStats feedback={feedback} />
-        <FeedbackList feedback={feedback} handleDelete={deleteFeedback} />
+    <FeedbackContext.Provider value={feedback}>
+      <div className="App">
+        <Header text="" />
+        <div className="container">
+          <FeedbackForm handleAdd={addFeedback} />
+          <FeedbackStats feedback={feedback} />
+          <FeedbackList feedback={feedback} handleDelete={deleteFeedback} />
+        </div>
+        <AboutIconLink />
       </div>
-      <AboutIconLink />
-    </div>
+    </FeedbackContext.Provider>
   );
 }
 
