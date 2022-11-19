@@ -1,3 +1,5 @@
 # Feedback App 
 ### This feedback app is a part of react course by Brad Traversy
-p however i make a changes in 
+however i make changes in the code to make it better and more afficiant
+
+hope you like it...
